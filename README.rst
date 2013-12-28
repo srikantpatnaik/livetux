@@ -16,7 +16,7 @@ Dependencies
 
 * kpartx
 
-* qemu
+* qemu, qemu-kvm 
 
 * 5 GB of free space and internet connection
 
