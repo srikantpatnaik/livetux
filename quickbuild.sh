@@ -51,7 +51,7 @@ function umnt() {
 }
 
 mnt
-chroot  $rootfs /bin/bash -c "apt-get update && apt-get install -y language-pack-en-base vim.tiny sudo ssh net-tools ethtool wireless-tools iputils-ping alsa-utils linux-{headers,image}-generic e17 xorg wicd-cli"
+chroot  $rootfs /bin/bash -c "apt-get update && apt-get install -y language-pack-en-base vim.tiny sudo ssh net-tools ethtool wireless-tools iputils-ping alsa-utils linux-{headers,image}-generic e17 xorg wicd-cli feh mupdf leafpad initramfs-tools casper"
 # remove xorg from apt-get list, add nameserver 10.101.1.5 in /etc/resolv.conf
 chroot $rootfs /bin/bash -c "adduser workshop && addgroup workshop adm && addgroup workshop sudo && addgroup workshop audio"
 
@@ -84,3 +84,5 @@ losetup -d /dev/$free_loop_device
 
 kvm-spice $raw_file
 
+# TODO
+# add squashfs tools and grubrescue
